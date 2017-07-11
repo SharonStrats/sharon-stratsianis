@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+    <!-- Custom styles for this template -->
+<!-- Latest compiled and minified CSS -->
+ <link rel='stylesheet' href='/bootstrap/flatly/theme/bootstrap.css' />
+ <link rel='stylesheet' href='/stylesheets/style.css' />
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+ <script src="/javascripts/frontend.js"></script>
+
+<!-- Google bar chart scripts -->
+<style>
+
+
+</style>
+
+
+  </head>
+  <body>
+  <!--  <h1><%= title %></h1> don't need this right now -->
+
+
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">Sigmafy</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="/">Welcome <span class="sr-only">(current)</span></a></li>
+        <li><a href="/projects">Projects</a></li>
+        <li><a href="/skills">Skills</a></li>
+        <li><a href="/education">Education</a></li>
+       </ul>
+
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="https://reflectechblog.wordpress.com/">Blog</a></li>
+        </li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+ 
+ <div class="wrapper">
+  <div class="container-header">
+
+          <h5 id="white-text" class="quote about-quote">Patience and perseverance have a magical effect before which difficulties disappear and obstacles vanish. </h5>
+          <h5 id="white-text" class="quote author-quote">John Quincy Adams </h5>
+
+       <img src="images/road-sky-sand-street.jpg" class="index-header" "img-responsive" align="center">
+ 
+    </div>
+
+<div class="container-fluid main">
+  <div class = "row">
+<!--
+<button id="get-another-quote-button" type="button">"Click Me!"</button>
+-->
+<div id="quote-content">
+
+</div>
+
+  <script>
+  
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(function(position) {
+      $("data").html("latitude " + position.coords.latitude + "longitude" +  position.coords.longitude);
+        $.getJSON("https://api.darksky.net/forecast/b6eb48197505f598459ce82e6fa5b7b5/" + position.coords.latitude + "," + position.coords.longitude + "?callback=?",function(json){
+      console.log(json);
+      var roundedTemp = Math.round(json.currently.apparentTemperature);
+      var farenheit = Math.round((json.currently.apparentTemperature - 32) * (5/9));
+     //8457 farenheit &#8451 Celcius
+      $("#weather").html(roundedTemp + " &#8457");
+      $.getJSON("https://maps.googleapis.com/maps/api/geocode/json?latlng=" + position.coords.latitude + "," + position.coords.longitude + "&key=AIzaSyB480YwQSQEY33zQvpCImhj0rMsjGkwk8M" , function(json2){ 
+           console.log(json2);
+           $("#city").html(json2.results[2].address_components[0].long_name);
+             });
+    });
+   
+  });
+}
+ </script>
+
+<div id="weather">
+
+</div>
+<div id="city">
+
+</div>
+
+  </div>
+  <div class="row">
+
+  <div class="col-lg-4 col-md-3">
+    <img src="images/sharon.jpg" class="profile-img" "img-responsive" align="left">
+  </div>
+  <div class="col-lg-8 col-md-9">
+    <div id="white-text">
+    <h3>Sharon Stratsianis </h3>
+    <h4>Role:       Developer/Systems Anaylst</h4>
+    <h4>Interests:  Finance/Education/BioTech/Software/Data Science</h4>
+    <p>My career journey began twenty years ago, when I stepped onto a plane at LAX for only the second time in my life.  There have been many flights since, too many to count.  I spent ten years as a PeopleSoft consultant, turned System Analyst;  developing new customizations, modifying existing ones, supporting users, rolling the systems out internationally.  Those years were exciting, eventful, stressful, sleepless ... but not nearly as much as the next ten.  </p>
+    <br>
+    <p>The next seven were spent moving around the world, having babies, raising them and then when I decided that I need to work for some sanity...  </p>
+    <br>
+    <p>The last three have been spent doing all those things as well as studying, coding, and dreaming of what I could possibly do next with my passion for coding, collaborating, and learning. </p>
+    <hr style="background:#F87431; border:0; height:7px" />
+    <div id="quote-machine">
+      <h5>In a gentle way, you can shake the world.  - Mahatma Gandhi </h5>
+      </div>
+
+  </div>
+  </div>
+  <span class="social social-twitter"></span>
+  </div>
+</div>
+  <a href="http://codepen.io/sstratsianis/">My Codepens</a>
+<div class="push"></div>
+</div>
+<footer class="footer">
+  <p id="white-text" style="text-align: center; font-weight: bold">Copyright &copy; 2015, All Rights Reserved</p>      
+  </footer>
+  <script>
+
+(function() {
+  var flickerAPI = "http://api.forismatic.com/api/1.0/";
+  $.getJSON( flickerAPI, {
+    method: "getQuote", 
+    format: "<json>",
+    lang:"<en>",
+    jsonp: "<?callback=?>"
+  })
+    .done(function( data ) {
+     console.log(data);
+      });
+    })();
+</script>
+</script>
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+  </body>
+</html>

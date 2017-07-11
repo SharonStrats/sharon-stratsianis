@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+    <!-- Custom styles for this template -->
+<!-- Latest compiled and minified CSS -->
+     <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+  <script src="https://npmcdn.com/masonry-layout@4.1/dist/masonry.pkgd.min.js"></script>
+  <link rel='stylesheet' href='/bootstrap/flatly/theme/bootstrap.css' />
+
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+  <style>
+
+
+  #masonry {
+  border-radius: 5px;
+  width:  300px;
+  height: auto;
+  float: left;
+  border: 2px solid #333; 
+  list-style-type: none;
+  background-color: #f2f2f2;
+  color: black;
+  text-wrap: suppress;
+  padding: 0px;
+  margin-left: -20px;
+  padding-bottom: 20px;
+ }
+ .container-header {
+    padding-bottom: 20px;
+ }
+  </style>
+<script>
+(function($){
+    var initialContainer = $('.columns'),
+        columnItems = $('.columns li'),
+        columns = null,
+        column = 1; // account for initial column
+  function updateColumns(){
+    column = 0;
+    columnItems.each(function(idx, el){
+        if (column > columns.length){
+            column = 0;
+        }
+        $(columns.get(column)).append(el);
+        column += 1;
+    });
+}
+    function setupColumns(){
+        columnItems.detach();
+        while (column++ < initialContainer.data('columns')){
+            initialContainer.clone().insertBefore(initialContainer);
+            column++;
+        }
+        columns = $('.columns');
+    }
+
+    $(function(){
+        setupColumns();
+        updateColumns();
+    });
+})(jQuery);
+
+</script>
+  
+</head>
+<body>
+    <nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">Sigmafy</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li><a href="/">Welcome </a></li>
+        <li><a href="/projects">Projects</a></li>
+        <li><a href="/skills">Skills</a></li>
+        <li class="active"><a href="/education">Education</a></li>
+      </ul>
+
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="https://reflectechblog.wordpress.com/">Blog</a></li>
+        </li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+<div class="container-header">
+  <h5 id="white-text" class="quote about-quote">Live as if you were to die tomorrow. Learn as if you were to live forever. </h5>
+  <h5 id="white-text" class="quote author-quote">Mahatma Gandhi</h5>
+  <img src="images/beach-832346.jpg" class="index-header" "img-responsive" align="center">
+</div>
+ 
+<div class="container-fluid">
+   <div class="row">
+    <div class="col-lg-6">
+    <div class="panel panel-primary">
+      <div class="panel-heading">
+        <h3 class="panel-title">Formal</h3>
+      </div>
+        <div class="panel-body">
+            <ul style="font-weight: bold"> 
+              <li>University California at Irvine - B.S. Computer Science 1996</li>
+              <li><i>Enrolled at Melbourne University in Masters of Information Technology - Distributed Computing</i></li>
+            </ul>
+        </div>
+      </div>
+
+    <div class="panel panel-primary">
+      <div class="panel-heading">
+        <h3 class="panel-title">Coursera</h3>
+      </div>
+  <div class="panel-body">
+   <p>Coursera is the best!  I love that you can learn from amazing Universities in the comfort of your own home.</p>
+   <table class="table">
+    <thead>
+      <tr>
+        <th>Class</th>
+        <th>Date</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+   <th><a href="https://www.coursera.org/account/accomplishments/certificate/MVJ78CDYUR">Web Application Architectures by University of New Mexico on Coursera. </a></th>
+   <th>Certificate earned on April 27, 2015 </th>
+   </tr>
+   <tr>
+     <th><a href="https://www.coursera.org/account/accomplishments/certificate/TAVGVSRW2D">Cloud Computing Concepts: Part 2 by University of Illinois at Urbana-Champaign on Coursera.  </a></th>
+     <th>Certificate earned on April 27, 2015</th>
+    </tr>
+    <tr>
+    <th><a href="https://www.coursera.org/account/accomplishments/certificate/WTMZVYZ3PB">Programming Mobile Applications for Android Handheld Systems: Part 1 by University of Maryland, College Park on Coursera. </a></th>
+    <th>Certificate earned on June 16, 2015</th>
+  </tr>
+  <tr>
+   <th><a href="https://www.coursera.org/account/accomplishments/certificate/9LXEGKEVZG">The Data Scientist’s Toolbox by Johns Hopkins University on Coursera. </a></th>
+   <th>Certificate earned on July 20, 2015</th>
+ </tr>
+ <tr>
+    <th><a href="https://www.coursera.org/account/accomplishments/certificate/GJNZJ4ECNU">Programming Mobile Applications for Android Handheld Systems: Part 2 by University of Maryland, College Park on Coursera. </a></th>
+    <th>Certificate earned on July 27, 2015</th>
+  </tr>
+  <tr>
+      <th><a href="https://www.coursera.org/account/accomplishments/certificate/4ZGBDPTJJVCR">Ruby on Rails: An Introduction by Johns Hopkins University on Coursera. </a> </th> 
+      <th>Certificate earned on December 18, 2015</th>
+    </tr>
+    <tr>
+  <th><a href= "https://www.coursera.org/account/accomplishments/certificate/EBARLP46M8PT">Introduction to Search Engine Optimization by University of California, Davis on Coursera. </a> </th> 
+  <th>Certificate earned on August 9, 2016</th>
+</tr>
+<tr>
+  <th><a href="https://www.coursera.org/account/accomplishments/certificate/NUR9FM6U52SC">Entrepreneurship 1: Developing the Opportunity by University of Pennsylvania on Coursera. </a> </th>
+  <th>Certificate earned on August 10, 2016</th>
+</tr>
+</tbody>
+</table>
+  </div>
+</div>
+</div>
+<div class="col-lg-6">
+
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <h3 class="panel-title">Udemy</h3>
+  </div>
+  <div class="panel-body">
+      <p>I've also enjoyed learning from Udemy.  These are all my favorites that I've completed.</p>
+  <ul>
+    <h5>Anthony Alicea</h5>
+  <li><a href="https://www.udemy.com/understand-nodejs/learn/v4/overview">NodeJS</a></li>
+    <li><a href="https://www.udemy.com/understand-javascript/learn/v4/overview">JavaScript: Understanding the Weird Parts</a></li>
+        <li><a href="https://www.udemy.com/learn-angularjs/learn/v4/overview">Learn and Understand AngularJS</a></li>
+    
+  <li>And more...</li>
+  
+  </ul>
+  </div>
+</div>
+
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <h3 class="panel-title">Other cool stuff</h3>
+  </div>
+  <div class="panel-body">
+    <ul>
+      <h5>Other Learning Resources I've been using</h5>
+      <li><a href="https://www.freecodecamp.com/">FreeCodeCamp</a></li>
+      <li><a href="https://www.packtpub.com/mapt">Mapt by Packt</a></li>
+    </ul>
+  <ul>
+    <h5>Favorite YouTuber's</h5>
+  </ul>
+  <ul>
+    <h5>Favorite Blogs</h5>
+  </ul>
+    <ul>
+    <h5>Favorite Books</h5>
+  </ul>
+  </div>
+</div>
+</div>
+</div>
+<div class="push"></div>
+   </div>
+
+   <footer class="footer">
+  <p id="white-text" style="text-align: center; font-weight: bold">Copyright &copy; 2015, All Rights Reserved</p>      
+  </footer>
+
+</body>
+</html>

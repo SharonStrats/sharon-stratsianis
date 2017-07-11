@@ -1,0 +1,182 @@
+body {
+  padding-top: 30px;
+  background-color: #033145;
+  background-size: cover;
+  height: 100%;
+}
+html, body { height: 100%;}
+/* 006666 */
+/* this one is like the navbar color 022635 */
+.wrapper {
+  min-height: 100%;
+  height: auto !important; /* This line and the next line are not necessary unless you need IE6 support */
+  height: 100%;
+  margin: 0 auto -155px; /* the bottom margin is the negative value of the footer's height */
+}
+.footer, .push {
+  height: 155px; /* .push must be the same height as .footer */
+}
+/*#009999 */
+.profile-img {
+	width: 90%;
+	height: 500px;
+}
+#weather {
+  color: white;
+  font-weight: bold;
+  text-align: right;
+  padding-right: 30px;
+  font-weight: 200em;
+}
+#city {
+  color: white;
+  font-weight: bold;
+  text-align: right;
+  padding-right: 30px;
+  font-weight: 200em;
+}
+.pie {
+  position: relative;
+  background: yellowgreen;
+  margin: 1em auto;
+  border: dashed 1px;
+  padding: 0;
+  width: 32em; height: 32em;
+  border-radius: 50%;
+  list-style: none;
+}
+.slice {
+  overflow: hidden;
+  position: absolute;
+  top: 0; right: 0;
+  width: 50%; height: 50%;
+  transform-origin: 0% 100%; 
+}
+.slice:first-child {
+  transform: rotate(15deg) skewY(-22.5deg);
+}
+.slice-contents {
+  position: absolute;
+  left: -100%;
+  width: 200%; height: 200%;
+  border-radius: 50%;
+  background: lightblue;
+}
+.slice:first-child .slice-contents {
+  transform: skewY(22.5deg); /* unskew slice contents */
+}
+.slice:hover .slice-contents { background: violet; } /* highlight on hover */
+.pieContainer {
+  position: absolute;
+  height: 200px;
+ /* border-radius: 50%;
+  background: yellowgreen; */
+  width: 200px;
+  -moz-border-radius: 100px;
+  -webkit-border-radius: 100px;
+  -o-border-radius: 100px;
+  border-radius: 100px;
+ /* clip: rect(0px, 100px, 200px, 0px); */
+}
+.pieBackground {
+  background-color: yellowgreen;
+  position: absolute;
+          width: 200px;
+          height: 200px;
+          -moz-border-radius: 100px;
+          -webkit-border-radius: 100px;
+          -o-border-radius: 100px;
+          border-radius: 100px;
+          -moz-box-shadow: -1px 1px 3px #000;
+          -webkit-box-shadow: -1px 1px 3px #000;
+          -o-box-shadow: -1px 1px 3px #000;
+          box-shadow: -2px 2px 10px #000;
+     } 
+/*.hold {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  -moz-border-radius: 100px;
+  -webkit-border-radius: 100px;
+  -o-border-radius: 100px;
+  border-radius: 100px;
+  clip: rect(0px, 200px, 200px, 100px);
+     } */
+/* #pieSlice1 .pie {
+  background-color: #1b458b;
+  -webkit-transform:rotate(100deg);
+  -moz-transform:rotate(100deg);
+  -o-transform:rotate(100deg);
+  transform:rotate(100deg);
+     } */
+
+.footer {
+     align: center;
+     background-color: #022635;
+     padding-top: 20px;
+     height: 60px;
+}
+
+.container-header {
+  margin: 0 auto;
+  width: 100%;
+}
+.index-header {
+  position: relative;
+  height: 150px;
+  width: 100%;
+  z-index: -1;
+}
+.about-quote {
+  padding: 60px 0px 0px 130px;
+}
+.author-quote {
+  padding: 80px 0px 0px 600px;
+}
+#white-text {
+  color: white;
+  font-weight: bold;
+}
+#text-box {
+  border: 2px solid #333;
+  background-color: #f2f2f2;
+  padding: 5px;
+  width: auto;
+  height: 500px;
+  margin-left: 20px;
+}  
+ul {
+ 
+  list-style-type: none;
+
+}
+img.greekeye {
+  width: 40px;
+  height: 50px;
+}
+.columns {
+    float: left;
+    position: relative;
+    margin-right: 20px;
+    padding-bottom: 20px;
+}
+.main {
+  padding-top: 20px;
+}
+.item {
+  border-radius: 5px;
+  width:  400px;
+  height: auto;
+  float: left;
+  border: 2px solid #333; 
+  list-style-type: none;
+  background-color: #f2f2f2;
+  color: black;
+  text-wrap: suppress;
+  padding-bottom: 20px;
+
+ }
+.quote {
+  position:absolute;
+  font-style: italic;
+}
