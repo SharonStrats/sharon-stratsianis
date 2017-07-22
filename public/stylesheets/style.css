@@ -180,3 +180,10 @@ img.greekeye {
   position:absolute;
   font-style: italic;
 }
+.course {
+  width: 70%;
+}
+
+.date {
+  width: 30%;
+}
